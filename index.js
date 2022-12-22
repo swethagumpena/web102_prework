@@ -184,3 +184,26 @@ $(firstGameContainer)[0].innerHTML += `<p>${topFundedGameName}</p>`
 $(secondGameContainer)[0].innerHTML += `<p>${secondTopFundedGameName}</p>`
 
 // do the same for the runner up item
+
+// Function to scroll to top
+function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+}
+
+// On scroll show the button
+window.onscroll = function () {
+    // Get the button to scroll to the top
+    var topbutton = document.getElementById("return-to-top");
+    // When the user scrolls down 20px from the top of the document, show the button
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        topbutton.hidden = false;
+    }
+    // Otherwise, hide the button
+    else {
+        topbutton.hidden = true;
+    }
+};
+
+const returnToTopBtn = document.getElementById("return-to-top");
+returnToTopBtn.addEventListener("click", topFunction)
